@@ -4,12 +4,17 @@ from nltk.tokenize import sent_tokenize
 # 下载必要的nltk数据
 nltk.download('punkt')
 
-# 假设这是从i4Semantic算法得到的单位CM和销量相关词汇
-# 你替换成Appendix A Panel A的词
-cm_related_words = ['price', 'cost', 'income', 'margin', 'profit', 'revenue', 'expense']
-volume_related_words = ['demand', 'sales', 'quantity', 'market', 'customer', 'order', 'capacity']
+def read_words_from_file(file_path):
+    with open(file_path, 'r') as file:
+        words = [line.strip() for line in file]
+    return words
 
-# 定义前瞻性词汇表和不确定性词汇表（你自己替换
+# 假设这是从i4Semantic算法得到的单位CM和销量相关词汇
+# 提取存储在txt文件中的Appendix A Panel A的词
+cm_related_words = read_words_from_file('cm_related_words.txt')
+volume_related_words = read_words_from_file('volume_related_words.txt')
+
+# 定义前瞻性词汇表和不确定性词汇表
 forward_looking_words = ["anticipate", "expect", "estimate", "project", "forecast"]
 uncertainty_words = ["uncertain", "risk", "uncertainty", "possible", "potential"]
 # 定义排除词汇，表明是法律模板内容或提及过去事件的词汇（自己替换

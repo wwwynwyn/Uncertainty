@@ -7,10 +7,10 @@ import string
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# 定义前瞻性词汇表和不确定性词汇表（这个应该也是你自己加）
+# 定义前瞻性词汇表和不确定性词汇表
 forward_looking_words = ["anticipate", "expect", "estimate", "project", "forecast"]
 uncertainty_words = ["uncertain", "risk", "uncertainty", "possible", "potential"]
-# 定义排除词汇，表明是法律模板内容或提及过去事件的词汇（这个应该也是你自己加）
+# 定义排除词汇，表明是法律模板内容或提及过去事件的词汇
 excluded_words = ["last year", "previous", "in the past"]
 
 # 获取停用词列表
